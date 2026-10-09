@@ -1,0 +1,22 @@
+[Unit]
+Description=ArcChime (signed webhooks for USDC payments on Arc)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=arcchime
+Group=arcchime
+WorkingDirectory=/opt/arcchime
+EnvironmentFile=/etc/arcchime.env
+# The port comes from ARCCHIME_PORT in /etc/arcchime.env (pick one that is free on your box).
+ExecStart=/opt/arcchime/.venv/bin/uvicorn arcchime.main:app --host 127.0.0.1 --port ${ARCCHIME_PORT} --proxy-headers
+Restart=always
+RestartSec=3
+# creates /var/lib/arcchime owned by the service user (the database lives here)
+StateDirectory=arcchime
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

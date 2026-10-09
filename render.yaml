@@ -1,0 +1,21 @@
+# Optional Render Blueprint. You can also create the service by hand in the dashboard.
+services:
+  - type: web
+    name: arcchime
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn arcchime.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: ARC_RPC
+        value: https://rpc.mainnet.arc.io
+      - key: CHAIN_ID
+        value: "5042"
+      - key: BACKFILL_BLOCKS
+        value: "20000"
+      - key: ADMIN_TOKEN
+        generateValue: true
+      # Set these in the dashboard (not in this file): DEMO_ADDRESS, DEMO_URL, DEMO_SECRET

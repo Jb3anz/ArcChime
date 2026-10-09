@@ -1,0 +1,5 @@
+# Add this block to your existing Caddyfile (do not replace the file). Caddy handles HTTPS itself.
+chime.your-domain.example {
+    encode gzip
+    reverse_proxy 127.0.0.1:8810
+}
