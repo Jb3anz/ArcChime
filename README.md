@@ -31,7 +31,11 @@ Both payment paths, detected and delivered through the live demo shop:
 | Native USDC send | [0xb04c…5502](https://explorer.arc.io/tx/0xb04c054bbf6748f414d669887c60d82b4bdefe7a4e658a36c42af9933fe85502) | `how it moved: native` |
 | ERC-20 `transfer()` on the USDC contract | [0xb1e5…20b4](https://explorer.arc.io/tx/0xb1e51167447864a382ec02462d292fb13acf7d3d75f13e068a5c99475cc620b4) | `how it moved: erc20` |
 
+
+##Native
 ![Shop unlocked after a native payment](docs/shop-native.png)
+
+##ERC-20
 ![Shop unlocked after an ERC-20 transfer](docs/shop-erc20.png)
 
 ## What we learned about Arc
