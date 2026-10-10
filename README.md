@@ -2,7 +2,9 @@
 
 **Signed webhooks for USDC payments on Arc.** Register an address and a URL. ArcChime watches Arc for USDC arriving at that address and sends your server a signed, normalized `payment.received` event, with retries, replay, and a block-hash check.
 
-**Live on Arc mainnet:** https://chime.cookie2001.me (landing page shows the live chain ID and block height) · **Demo shop:** https://chime.cookie2001.me/shop · **Demo video:** _add link_
+**Live on Arc mainnet:** https://chime.cookie2001.me
+**Demo shop:** https://chime.cookie2001.me/shop 
+**Demo video:** _add link_
 
 > Status: small, unaudited proof of concept, running against Arc mainnet. See [Limitations](#limitations).
 
